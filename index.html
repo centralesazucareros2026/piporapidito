@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipo Rapidito - Aventuras en Miami</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .logo-section {
+            margin-bottom: 20px;
+        }
+        
+        .logo-section h1 {
+            font-size: 4em;
+            color: white;
+            text-shadow: 3px 3px 0 #FF6B6B, 6px 6px 0 #FFD93D;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.5em;
+            color: #FFD93D;
+            font-weight: bold;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero con Pipo */
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .hero h2 {
+            font-size: 2.5em;
+            color: #FF6B6B;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* Grid de contenido */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 4px solid transparent;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card.pink { border-color: #FF6B6B; }
+        .card.blue { border-color: #4ECDC4; }
+        .card.yellow { border-color: #FFD93D; }
+        .card.green { border-color: #95E1D3; }
+        .card.purple { border-color: #B57EDC; }
+        .card.orange { border-color: #FFB347; }
+        
+        .card-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+        
+        .card h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .card p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .card a {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.2s;
+        }
+        
+        .card a:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Social section */
+        .social-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .social-section h2 {
+            font-size: 2.5em;
+            color: #FF6B6B;
+            margin-bottom: 30px;
+        }
+        
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .social-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3em;
+            color: white;
+            transition: transform 0.3s;
+        }
+        
+        .social-btn:hover {
+            transform: scale(1.15);
+        }
+        
+        .social-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+        
+        .social-btn.tiktok {
+            background: #000000;
+        }
+        
+        .social-btn.youtube {
+            background: #FF0000;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <h1>🌟 PIPO RAPIDITO 🌟</h1>
+            <div class="tagline">¡Aventuras en Miami para Niños!</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        
+        <!-- Hero -->
+        <div class="hero">
+            <h2>¡Hola Amiguitos! Soy Pipo 🎉</h2>
+            <p>
+                ¡Bienvenidos a mi mundo lleno de aventuras en Miami! Aquí encontrarás videos divertidos, 
+                cuentos, libros para colorear, juegos y mucho más. ¡Vamos a aprender y divertirnos juntos!
+            </p>
+        </div>
+        
+        <!-- Content Grid -->
+        <div class="content-grid">
+            
+            <div class="card pink">
+                <div class="card-icon">📺</div>
+                <h3>Videos</h3>
+                <p>¡Mira mis aventuras en Miami! Videos cortos de 6 segundos llenos de diversión.</p>
+                <a href="videos.html">Ver Videos →</a>
+            </div>
+            
+            <div class="card blue">
+                <div class="card-icon">📚</div>
+                <h3>Comic Book</h3>
+                <p>Lee mis historias en formato de cómic. ¡24 páginas de pura aventura!</p>
+                <a href="comic.html">Leer Comic →</a>
+            </div>
+            
+            <div class="card yellow">
+                <div class="card-icon">🎨</div>
+                <h3>Libro para Colorear</h3>
+                <p>¡30 páginas para colorear! Descarga gratis y pinta mis aventuras.</p>
+                <a href="colorear.html">Descargar →</a>
+            </div>
+            
+            <div class="card green">
+                <div class="card-icon">🎮</div>
+                <h3>Juegos</h3>
+                <p>Juegos interactivos para aprender español e inglés mientras te diviertes.</p>
+                <a href="juegos.html">Jugar →</a>
+            </div>
+            
+            <div class="card purple">
+                <div class="card-icon">🌴</div>
+                <h3>Miami para Niños</h3>
+                <p>Descubre Miami con Pipo: playas, parques, museos y lugares divertidos.</p>
+                <a href="miami.html">Explorar →</a>
+            </div>
+            
+            <div class="card orange">
+                <div class="card-icon">👨‍👩‍👧‍👦</div>
+                <h3>Para Padres</h3>
+                <p>Recursos educativos, tips y actividades para hacer en familia.</p>
+                <a href="padres.html">Recursos →</a>
+            </div>
+            
+        </div>
+        
+        <!-- Social Section -->
+        <div class="social-section">
+            <h2>🎉 ¡Sígueme en Redes Sociales! 🎉</h2>
+            <div class="social-grid">
+                <a href="#" class="social-btn instagram">📸 Instagram</a>
+                <a href="#" class="social-btn tiktok">🎵 TikTok</a>
+                <a href="#" class="social-btn youtube">▶️ YouTube</a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <footer>
+        <p><strong>🌟 PIPO RAPIDITO 🌟</strong></p>
+        <p>Aventuras en Miami • Contenido Educativo para Niños</p>
+        <p style="margin-top: 15px; font-size: 0.9em;">
+            📧 Contacto: [email] | 🎨 Pedrosopublishing © 2026
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos - Pipo Rapidito</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .logo-section h1 {
+            font-size: 3em;
+            color: white;
+            text-shadow: 3px 3px 0 #FF6B6B, 6px 6px 0 #FFD93D;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            color: #FFD93D;
+            font-weight: bold;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* Back button */
+        .back-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        
+        .back-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Hero */
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .hero h2 {
+            font-size: 2.5em;
+            color: #95E1D3;
+            margin-bottom: 20px;
+        }
+        
+        /* Games Grid */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .game-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 4px solid #95E1D3;
+        }
+        
+        .game-card h3 {
+            font-size: 2em;
+            color: #95E1D3;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Memory Game */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .memory-card {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .memory-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .memory-card.flipped {
+            background: white;
+            border: 3px solid #95E1D3;
+        }
+        
+        .memory-card.matched {
+            background: #95E1D3;
+            cursor: default;
+        }
+        
+        /* Quiz Game */
+        .quiz-question {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            color: #555;
+            text-align: center;
+        }
+        
+        .quiz-options {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .quiz-option {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        .quiz-option:hover {
+            transform: scale(1.03);
+        }
+        
+        .quiz-option.correct {
+            background: #95E1D3;
+        }
+        
+        .quiz-option.incorrect {
+            background: #FF6B6B;
+        }
+        
+        .score {
+            text-align: center;
+            font-size: 1.5em;
+            color: #95E1D3;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .game-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .game-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-radius: 20px 20px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <h1>🎮 JUEGOS DE PIPO 🎮</h1>
+            <div class="tagline">¡Aprende Jugando!</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <a href="index.html" class="back-btn">← Volver al Inicio</a>
+        
+        <div class="hero">
+            <h2>🎉 ¡Hora de Jugar y Aprender! 🎉</h2>
+            <p style="font-size: 1.2em; color: #666;">
+                Juegos divertidos para aprender español e inglés con Pipo
+            </p>
+        </div>
+        
+        <div class="games-grid">
+            
+            <!-- Memory Game -->
+            <div class="game-card">
+                <h3>🧠 Memory Match</h3>
+                <p style="text-align: center; margin-bottom: 15px;">Encuentra las parejas español-inglés</p>
+                <div class="score" id="memoryScore">Movimientos: 0</div>
+                <div class="memory-grid" id="memoryGame"></div>
+                <div style="text-align: center;">
+                    <button class="game-btn" onclick="initMemoryGame()">Nuevo Juego</button>
+                </div>
+            </div>
+            
+            <!-- Quiz Game -->
+            <div class="game-card">
+                <h3>❓ Quiz de Miami</h3>
+                <p style="text-align: center; margin-bottom: 15px;">¿Cuánto sabes sobre Miami?</p>
+                <div class="score" id="quizScore">Puntos: 0/5</div>
+                <div id="quizGame">
+                    <div class="quiz-question" id="question"></div>
+                    <div class="quiz-options" id="options"></div>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="game-btn" onclick="initQuiz()">Nuevo Quiz</button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div style="background: white; border-radius: 20px; padding: 30px; margin: 40px 0; text-align: center;">
+            <h3 style="color: #95E1D3; font-size: 2em; margin-bottom: 15px;">🚀 ¡Próximamente Más Juegos!</h3>
+            <p style="font-size: 1.2em; color: #666;">
+                • Sopa de Letras 🔤<br>
+                • Colorea a Pipo Online 🎨<br>
+                • Encuentra las Diferencias 🔍<br>
+                • Y mucho más...
+            </p>
+        </div>
+        
+    </div>
+    
+    <footer>
+        <p><strong>🌟 PIPO RAPIDITO 🌟</strong></p>
+        <p>Aventuras en Miami • Contenido Educativo para Niños</p>
+    </footer>
+    
+    <script>
+        // MEMORY GAME
+        const memoryWords = [
+            {spanish: '🏖️', english: 'BEACH'},
+            {spanish: '🦩', english: 'FLAMINGO'},
+            {spanish: '🦎', english: 'IGUANA'},
+            {spanish: '☀️', english: 'SUN'},
+            {spanish: '🚌', english: 'BUS'},
+            {spanish: '🏫', english: 'SCHOOL'},
+            {spanish: '⚽', english: 'SOCCER'},
+            {spanish: '🎂', english: 'CAKE'}
+        ];
+        
+        let memoryCards = [];
+        let flippedCards = [];
+        let moves = 0;
+        
+        function initMemoryGame() {
+            moves = 0;
+            flippedCards = [];
+            document.getElementById('memoryScore').textContent = 'Movimientos: 0';
+            
+            memoryCards = [];
+            memoryWords.forEach(word => {
+                memoryCards.push({value: word.spanish, pair: word.english, type: 'spanish'});
+                memoryCards.push({value: word.english, pair: word.spanish, type: 'english'});
+            });
+            
+            memoryCards.sort(() => Math.random() - 0.5);
+            
+            const gameEl = document.getElementById('memoryGame');
+            gameEl.innerHTML = '';
+            
+            memoryCards.forEach((card, index) => {
+                const cardEl = document.createElement('div');
+                cardEl.className = 'memory-card';
+                cardEl.dataset.index = index;
+                cardEl.textContent = '?';
+                cardEl.onclick = () => flipCard(index);
+                gameEl.appendChild(cardEl);
+            });
+        }
+        
+        function flipCard(index) {
+            const cardEl = document.querySelectorAll('.memory-card')[index];
+            
+            if (flippedCards.length === 2 || cardEl.classList.contains('flipped') || cardEl.classList.contains('matched')) {
+                return;
+            }
+            
+            cardEl.classList.add('flipped');
+            cardEl.textContent = memoryCards[index].value;
+            flippedCards.push(index);
+            
+            if (flippedCards.length === 2) {
+                moves++;
+                document.getElementById('memoryScore').textContent = 'Movimientos: ' + moves;
+                
+                setTimeout(checkMatch, 1000);
+            }
+        }
+        
+        function checkMatch() {
+            const [index1, index2] = flippedCards;
+            const card1 = memoryCards[index1];
+            const card2 = memoryCards[index2];
+            const cardEls = document.querySelectorAll('.memory-card');
+            
+            if (card1.pair === card2.value || card2.pair === card1.value) {
+                cardEls[index1].classList.add('matched');
+                cardEls[index2].classList.add('matched');
+            } else {
+                cardEls[index1].classList.remove('flipped');
+                cardEls[index2].classList.remove('flipped');
+                cardEls[index1].textContent = '?';
+                cardEls[index2].textContent = '?';
+            }
+            
+            flippedCards = [];
+        }
+        
+        // QUIZ GAME
+        const quizQuestions = [
+            {
+                question: '¿De qué color son los flamencos?',
+                options: ['Azul', 'Rosa', 'Verde', 'Amarillo'],
+                correct: 1
+            },
+            {
+                question: '¿Qué animal se ve mucho en Miami?',
+                options: ['Oso', 'Iguana', 'Pingüino', 'Elefante'],
+                correct: 1
+            },
+            {
+                question: '¿Cómo se dice "playa" en inglés?',
+                options: ['Beach', 'Park', 'School', 'Store'],
+                correct: 0
+            },
+            {
+                question: '¿Cuál es el clima de Miami?',
+                options: ['Frío', 'Nieve', 'Calor', 'Lluvia'],
+                correct: 2
+            },
+            {
+                question: '¿Qué día viene después del viernes?',
+                options: ['Lunes', 'Martes', 'Sábado', 'Domingo'],
+                correct: 2
+            }
+        ];
+        
+        let currentQuestion = 0;
+        let quizScore = 0;
+        
+        function initQuiz() {
+            currentQuestion = 0;
+            quizScore = 0;
+            showQuestion();
+        }
+        
+        function showQuestion() {
+            if (currentQuestion >= quizQuestions.length) {
+                document.getElementById('question').innerHTML = `
+                    <div style="font-size: 2em;">🎉</div>
+                    <div>¡Juego Terminado!</div>
+                    <div style="font-size: 1.5em; margin-top: 10px;">Score: ${quizScore}/${quizQuestions.length}</div>
+                `;
+                document.getElementById('options').innerHTML = '';
+                document.getElementById('quizScore').textContent = `Puntos: ${quizScore}/${quizQuestions.length}`;
+                return;
+            }
+            
+            const q = quizQuestions[currentQuestion];
+            document.getElementById('question').textContent = q.question;
+            document.getElementById('quizScore').textContent = `Puntos: ${quizScore}/${quizQuestions.length}`;
+            
+            const optionsEl = document.getElementById('options');
+            optionsEl.innerHTML = '';
+            
+            q.options.forEach((option, index) => {
+                const optionEl = document.createElement('div');
+                optionEl.className = 'quiz-option';
+                optionEl.textContent = option;
+                optionEl.onclick = () => selectAnswer(index);
+                optionsEl.appendChild(optionEl);
+            });
+        }
+        
+        function selectAnswer(selected) {
+            const q = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+            
+            options[selected].classList.add(selected === q.correct ? 'correct' : 'incorrect');
+            
+            if (selected === q.correct) {
+                quizScore++;
+            }
+            
+            setTimeout(() => {
+                currentQuestion++;
+                showQuestion();
+            }, 1500);
+        }
+        
+        // Initialize games on load
+        window.onload = () => {
+            initMemoryGame();
+            initQuiz();
+        };
+    </script>
+</body>
+</html>

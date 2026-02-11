@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miami para Niños - Pipo Rapidito</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .logo-section h1 {
+            font-size: 3em;
+            color: white;
+            text-shadow: 3px 3px 0 #FF6B6B, 6px 6px 0 #FFD93D;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            color: #FFD93D;
+            font-weight: bold;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        
+        .back-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .hero h2 {
+            font-size: 2.5em;
+            color: #B57EDC;
+            margin-bottom: 20px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section h3 {
+            font-size: 2.2em;
+            color: #B57EDC;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .place-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid #B57EDC;
+            transition: transform 0.3s;
+        }
+        
+        .place-card:hover {
+            transform: translateX(10px);
+        }
+        
+        .place-card h4 {
+            font-size: 1.5em;
+            color: #B57EDC;
+            margin-bottom: 10px;
+        }
+        
+        .place-card p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1.05em;
+        }
+        
+        .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-radius: 20px 20px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <h1>🌴 MIAMI PARA NIÑOS 🌴</h1>
+            <div class="tagline">¡Descubre Miami con Pipo!</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <a href="index.html" class="back-btn">← Volver al Inicio</a>
+        
+        <div class="hero">
+            <h2>🌊 ¡Explora Miami Conmigo! 🌊</h2>
+            <p style="font-size: 1.2em; color: #666;">
+                Los mejores lugares para niños en Miami - ¡Aventuras garantizadas!
+            </p>
+        </div>
+        
+        <!-- PLAYAS -->
+        <div class="section">
+            <h3>🏖️ Playas para Niños</h3>
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="icon">🏖️</div>
+                    <h4>South Beach</h4>
+                    <p>Arena suave y olas pequeñas perfectas para niños. ¡El agua es cristalina y hay muchos lugares para jugar!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🐚</div>
+                    <h4>Crandon Park</h4>
+                    <p>Ideal para familias con aguas tranquilas y poco profundas. ¡Puedes buscar conchas y construir castillos de arena!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🌊</div>
+                    <h4>Matheson Hammock</h4>
+                    <p>Tiene una piscina natural hecha por el mar. ¡Es súper segura y divertida para chapotear!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PARQUES Y ZOO -->
+        <div class="section">
+            <h3>🦩 Parques y Animales</h3>
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="icon">🦩</div>
+                    <h4>Zoo Miami</h4>
+                    <p>¡Más de 3,000 animales! Flamencos rosados, jirafas, elefantes y mucho más. ¡El zoológico más grande de Florida!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🦋</div>
+                    <h4>Butterfly World</h4>
+                    <p>Miles de mariposas de colores vuelan a tu alrededor. ¡Es como estar en un jardín mágico!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🌳</div>
+                    <h4>Tropical Park</h4>
+                    <p>Parque enorme con columpios, áreas de juego, y espacios para correr. ¡Perfecto para un picnic familiar!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🦎</div>
+                    <h4>Ver Iguanas</h4>
+                    <p>En Brickell y muchos parques puedes ver iguanas salvajes. ¡Son verdes y naranjas y les encanta tomar el sol!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MUSEOS -->
+        <div class="section">
+            <h3>🔬 Museos Divertidos</h3>
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="icon">🔬</div>
+                    <h4>Frost Science Museum</h4>
+                    <p>Experimentos interactivos, acuario gigante y planetario. ¡Aprende sobre ciencia mientras te diviertes!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🎨</div>
+                    <h4>Miami Children's Museum</h4>
+                    <p>Todo está hecho para niños. ¡Puedes ser bombero, doctor, artista o lo que quieras!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🐠</div>
+                    <h4>Miami Seaquarium</h4>
+                    <p>Delfines, tortugas marinas, manatíes y shows en vivo. ¡Hasta puedes tocar las rayas!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LUGARES ESPECIALES -->
+        <div class="section">
+            <h3>🎉 Lugares Especiales</h3>
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="icon">🦜</div>
+                    <h4>Jungle Island</h4>
+                    <p>Parque de aventuras con animales exóticos, tirolesas y shows con loros. ¡Una aventura en la jungla en medio de Miami!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🍦</div>
+                    <h4>Azucar Ice Cream</h4>
+                    <p>¡Los mejores helados cubanos! Sabores como guayaba, flan y Abuela María. ¡Súper deliciosos!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🌺</div>
+                    <h4>Fairchild Garden</h4>
+                    <p>Jardín botánico gigante con plantas de todo el mundo. ¡Hay mariposas, pájaros y flores increíbles!</p>
+                </div>
+                
+                <div class="place-card">
+                    <div class="icon">🎪</div>
+                    <h4>Venetian Pool</h4>
+                    <p>Piscina histórica hecha de coral con cascadas y cuevas. ¡Parece un oasis tropical!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TIPS -->
+        <div class="section" style="background: linear-gradient(135deg, #FFD93D 0%, #FFB347 100%);">
+            <h3 style="color: white;">💡 Tips de Pipo</h3>
+            <div style="color: white; font-size: 1.2em; line-height: 2;">
+                ☀️ Usa bloqueador solar - ¡El sol de Miami es muy fuerte!<br>
+                💧 Lleva mucha agua - Hace mucho calor<br>
+                🧢 No olvides tu gorra favorita<br>
+                📸 Trae cámara - ¡Vas a querer muchas fotos!<br>
+                👟 Zapatos cómodos para caminar y explorar<br>
+                🦟 Repelente de mosquitos en los parques
+            </div>
+        </div>
+        
+    </div>
+    
+    <footer>
+        <p><strong>🌟 PIPO RAPIDITO 🌟</strong></p>
+        <p>Aventuras en Miami • Contenido Educativo para Niños</p>
+    </footer>
+</body>
+</html>
